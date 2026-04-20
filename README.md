@@ -1,7 +1,3 @@
-Here's the rewrite:
-
----
-
 # Attendify
 
 Every semester, across hundreds of lecture halls in Nigerian universities, the same ritual plays out. A sheet of paper passes from hand to hand. Names get signed by people who aren't there. Lecturers have no way to know who actually showed up. And by the time results come out, the attendance record is a fiction.
