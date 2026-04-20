@@ -1,0 +1,30 @@
+/**
+ * Authentication Provider - UPDATED 2025
+ * 
+ * Initializes auth state on app start and provides auth context.
+ * 
+ * Handles new schema with:
+ * - Nullable department_id (UUID) - null for lecturers without department
+ * - Nullable level - null for lecturers and HOCs
+ * - Admin role support
+ * 
+ * Requirements: 1.5, 2.5, MIGRATION_SUMMARY.md
+ */
+
+import { useAuthStore } from '@/stores/authStore';
+import { useEffect } from 'react';
+
+interface AuthProviderProps {
+  children?: React.ReactNode;
+}
+
+export function AuthProvider({ children }: AuthProviderProps) {
+  const initializeAuth = useAuthStore((state) => state.initializeAuth);
+
+  useEffect(() => {
+    // Initialize auth state from storage on mount
+    initializeAuth();
+  }, [initializeAuth]);
+
+  return <>{children}</>;
+}
